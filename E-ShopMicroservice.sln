@@ -5,14 +5,39 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8ACB1D36-C513-4B99-B5F7-5AB87C71B5CA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{FCDE590D-704B-4C97-8070-691273C104EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{378B446E-A33B-4979-B476-2AEDAFA1BFF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api", "src\Services\Catalog\Catalog.Api\Catalog.Api.csproj", "{2509B34E-1242-4CE7-838D-EA36F6DAD8DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{91449D55-3578-42D7-BAAE-2B0E528D28A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks", "src\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj", "{4BB1FBC5-A42F-4C42-BC46-A17A61953027}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2509B34E-1242-4CE7-838D-EA36F6DAD8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2509B34E-1242-4CE7-838D-EA36F6DAD8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2509B34E-1242-4CE7-838D-EA36F6DAD8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2509B34E-1242-4CE7-838D-EA36F6DAD8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB1FBC5-A42F-4C42-BC46-A17A61953027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB1FBC5-A42F-4C42-BC46-A17A61953027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB1FBC5-A42F-4C42-BC46-A17A61953027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB1FBC5-A42F-4C42-BC46-A17A61953027}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FCDE590D-704B-4C97-8070-691273C104EB} = {8ACB1D36-C513-4B99-B5F7-5AB87C71B5CA}
+		{378B446E-A33B-4979-B476-2AEDAFA1BFF1} = {FCDE590D-704B-4C97-8070-691273C104EB}
+		{2509B34E-1242-4CE7-838D-EA36F6DAD8DD} = {378B446E-A33B-4979-B476-2AEDAFA1BFF1}
+		{91449D55-3578-42D7-BAAE-2B0E528D28A9} = {8ACB1D36-C513-4B99-B5F7-5AB87C71B5CA}
+		{4BB1FBC5-A42F-4C42-BC46-A17A61953027} = {91449D55-3578-42D7-BAAE-2B0E528D28A9}
 	EndGlobalSection
 EndGlobal
