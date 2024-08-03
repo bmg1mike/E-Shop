@@ -1,17 +1,10 @@
-﻿using BuildingBlocks;
-
-namespace Catalog.Api;
+﻿namespace Catalog.Api;
 
 public record CreateProductCommand(string Name, List<string> Categories, string Description, string ImageFile, decimal Price) : ICommand<CreateProductResult>;
 public record CreateProductResult(Guid Id);
-internal class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductResult>
+internal class CreateProductCommandHandler(IDocumentSession documentSession) : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
-    // private readonly IProductRepository _productRepository;
-
-    // public CreateProductCommandHandler(IProductRepository productRepository)
-    // {
-    //     _productRepository = productRepository;
-    // }
+    private readonly IDocumentSession documentSession = documentSession;
 
     public async Task<CreateProductResult> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
@@ -24,7 +17,8 @@ internal class CreateProductCommandHandler : ICommandHandler<CreateProductComman
             Price = request.Price
         };
 
-        // await _productRepository.AddAsync(product);
+        documentSession.Store(product);
+        await documentSession.SaveChangesAsync(cancellationToken);
 
         return new CreateProductResult(product.Id);
     }

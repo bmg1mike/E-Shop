@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  catalogDb:
+   image: postgres
+   environment:
+     POSTGRES_USER: admin
+     POSTGRES_PASSWORD: secret
+     POSTGRES_DB: CatalogDb
+
+volumes:
+  postgres_catalog:
