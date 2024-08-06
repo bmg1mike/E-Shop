@@ -1,3 +1,5 @@
+using FluentValidation;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,7 +8,10 @@ builder.Services.AddCarter();
 builder.Services.AddMediatR(config =>
 {
     config.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    // config.AddBehavior(typeof(ValidationBehaviour<,>));
+    config.AddOpenBehavior(typeof(ValidationBehaviour<,>));
 });
+builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 builder.Services.AddMarten(options =>
 {
     options.Connection(builder.Configuration.GetConnectionString("CatalogConnection")!);
